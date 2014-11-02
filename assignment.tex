@@ -73,10 +73,11 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 		\item The negation of claim 1.4 would be:
 		\item $\forall x \in \floor{x+1} = \floor{x} + 1$
 				\begin{description}
-				\item Assume $x$ to be any generic number.
+				\item Assume $x \in \mathbb{R}$ \# Generic
 						\begin{description}
 						\item $\exists Z_{0}, Z_1$ such that $Z_0 \leq x+1$, $Z_1 \leq x$
-						\item Then, $Z_{0} - 1 \leq x$ \#This is the largest integer less than x, since subtracting one from the largest integer less than or equal to x+1 will give the largest integer less than x.
+						\item Then $Z_0 \in \mathbb{Z}$
+						\item Then, $Z_{0} - 1 \leq x$ \# This is the largest integer less than x, since subtracting one from the largest integer less than or equal to x+1 will give the largest integer less than x.
 						\item But, $Z_1$, by definition is also the largest integer less than or equal to x.
 						\item Then $Z_0 = Z_1 + 1$
 						\item Substituting for the values of $Z_0$, and $Z_1$, $\floor{x+1} = \floor{x}+1$
@@ -85,21 +86,22 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 				\end{description}
 		\item Then $\forall x \in \floor{x+1} = \floor{x} + 1$
 		\end{description}
-\item Proving claim 2.2 is false, and disproving its converse.
+\item Proving claim 2.2 is true, and disproving its converse.
 		\begin{description}
-				\item Assume m, and n to be generic. \# Domain assumption
+				\item Assume $m, n \in \mathbb{R}$ \# generic
 						\begin{description}
-								\item Let $k_0$, $j_0$ be a natural numbers
-								\item Assume $m = 7k_0 + 3$ and $n = 7j_0 + 4$ \# Antecedent
-										\begin{description}
-												\item Then, evaluating $mn$, we get $mn = (7k_0 + 3)(7j_0 +4)$
-										\item $mn = 49k_0j_0 + 28k_0 + 21j_0 + 12$ \# Expand the product
-										\item $mn = 49k_0j_0 + 28k_0 + 21j_0 + 7 + 5$ \# Change 12 into 7+5
-										\item $mn = 7(7k_0j_0 + 6k_0 + 3j_0 + 1) +5$ \# Factor out 7 from the first 4 terms.
-										\end {description}
+						\item Let $k_0$, $j_0$ be a natural numbers
+						\item Assume $m = 7k_0 + 3$ and $n = 7j_0 + 4$ \# Antecedent
+								\begin{description}
+								\item Then, evaluating $mn$, we get $mn = (7k_0 + 3)(7j_0 +4)$
+								\item $mn = 49k_0j_0 + 28k_0 + 21j_0 + 12$ \# Expand the product
+								\item $mn = 49k_0j_0 + 28k_0 + 21j_0 + 7 + 5$ \# Change 12 into 7+5
+								\item $mn = 7(7k_0j_0 + 6k_0 + 3j_0 + 1) +5$ \# Factor out 7 from the first 4 terms.
+								\end {description}
 								
-								\item Then, there exists $i_0 \in \mathbb{N}$ \# Natural numbers are closed under addition and multiplication.
-								\item Then, $mn$ can be written in the form $7i_0 + 5$
+						\item Let $i_0 = 7k_0j_0 + 6k_0 + 3j_0 + 1$
+						\item Then $i_0 \in \mathbb{N}$ \# Natural numbers are closed under addition and multiplication.
+						\item Then $mn = 7i_0 + 5$ \# Substitute in i
 						\end{description}
 				\item Then, $\forall m,n \in \mathbb{N}$, ($\exists k \in \mathbb{N}, m = 7k + 3$) $\wedge$ ($\exists j \in \mathbb{N}, n = 7j + 4$) $\Rightarrow$ ($\exists i \in \mathbb{N}, mn = 7i + 5$)
 		\end{description}
@@ -107,12 +109,13 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 \begin{description}
 		\item The converse of 2.2 is $\forall m,n$ ($\exists i \in \mathbb{N}, mn = 7i + 5$) $\Rightarrow$ ($\exists k \in \mathbb{N}, m = 7k + 3$) $\wedge$ ($\exists j \in \mathbb{N}, n = 7j + 4$)
 		\item Its contrapositive is $\forall m,n$ ($\forall k \in \mathbb{N}, m \neq 7k+3$) $\vee$ ($\forall j \in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\forall i \in \mathbb{N} mn \neq 7i + 5$
-		\item The negation is $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\exists i \in \mathbb{N} mn = 7i + 5$. We will prove this.
+		\item The negation is $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j \in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ ($\exists i \in \mathbb{N}, mn = 7i + 5)$.
 		\begin{description}
-			\item Choose $m = 5$ \# $5 (mod 7) \not \equiv 3 (mod 7)$. Antecedent assumption
-			\item Choose $n = 15$ \# $7 (mod 7) \not \equiv 4 (mod 7$). Antecedent assumption
-			\item $mn = 5 \times 7 = 75 \equiv 5 (mod 7)$ \# Evaluate m $\times$ n.
-			\item $75 = 7\times 5 + 5$ \# Realize that 7 is equal to some integer i (5), such that 7$\times$ i + 5 = 35
+			\item Let $m \in \mathbb{N}, m = 10$
+			\item Then $\forall k \in \mathbb{N}, m \neq 7k + 3$ is false, there exists $k$ with value of 1 which causes to evaluate false.
+			\item Let $n \in \mathbb{N}, n = 11$
+			\item Then $\forall j \in \mathbb{N}, n \neq 7j + 4$ is false, there exists $j$ with value of 1 which causes to evaluate false. 
+			\item Then the antecedent is always false and, therefore, the implication is true.
 		\end{description}
 		\item Then, $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\exists i \in \mathbb{N} mn = 7i + 5$ \# Assumed antecendent, got consequent.
 \end{description}

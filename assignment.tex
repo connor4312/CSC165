@@ -1,4 +1,4 @@
-\documentclass[boldsans]{article}
+\documentclass{article}
 \usepackage{amsmath,amssymb}
 \usepackage{hyperref}
 \title{CSC165 Fall 2014, Assignment 2}
@@ -30,13 +30,12 @@ false claim you ``prove,'' or any true claim you ``disprove.''
             \begin{description}
             \item Assume $x > y$ \# Antecedent
                 \begin{description}
-                \item Let $d = x - y$
-                \item Then $y - 1 < x - 1$
-                \item Then $y - 1 < \floor{y} \leq y$ and $x - 1 < \floor{x} \leq x$ \# By defintion, there cannot be an integer greater than $\floor{y}$ which is also greater than $y$ itself. Therefore, the $\floor{y}$ must be at last 1 less than y, and at most equal to y (definition: $\floor{y} \leq y$).
-                \item Then there is one possible value for $\floor{x}$ and $\floor{y}$ \# Floors are integers, by definition.
-                \item Then $y + d - 1 < \floor{x} \leq y + d$
-                \item Then $y - 1 < y + d - 1 < \floor{y} \leq \floor{x} \leq y \leq y + d$ \# Combine the inequalities - we can do this because we know that the floors both return a single integer.
-                \item Then $\floor{y} \leq \floor{x}$
+                \item Then $\forall z \in \mathbb{Z}, z \leq x \implies z \leq \floor{x}$ and $\forall z \in \mathbb{Z}, z \leq y \implies z \leq \floor{y}$\# Definition of floor
+                \item Then $\forall z \in \mathbb{Z}, z \leq y \implies (z \leq \floor{x} \land z \leq \floor{y})$ \# $x < y$, so by the antecedent $z \leq y \implies z \leq x$
+                \item Let there be $d = (x - y) / 1$ \# Treat as integer division.
+                \item Then $d \in \mathbb{N}_0$ \# d must be $\geq$ zero because $x > y$, and closed by division.
+                \item Then $\forall z \in \mathbb{Z}, z \leq y \implies (z + d \leq \floor{x} \land z \leq \floor{y})$ \# Make the $x$ part of the and statement equivalent to its definition.
+                \item Then $\floor{x} \leq \floor{y}$ \# $z < z + d$
                 \end{description}
             \item Conclude $x > y \implies \floor{x} \geq \floor{y}$
             \end{description}
@@ -46,87 +45,77 @@ false claim you ``prove,'' or any true claim you ``disprove.''
     \end{description}
 \item Proving the statment 1.2 true.
     \begin{description}
-    \item Assume $x \in \mathbb{R}$ \# generic
-    \item Assume $e \in \mathbb{R}^+$ \# generic, indent remaining for formatting purposes
+    \item Assume $x \in \mathbb{R}, e \in \mathbb{R}^+$ \# generic
         \begin{description}
         \item Let d = e + 2
         \item Then $d \in \mathbb{R}^+$ \# $\mathbb{R}^+$ closed by addition
         \item Assume $w \in \mathbb{R}$ \# generic
             \begin{description}
-            \item Assume $w \in \mathbb{R}$ \# generic
+            \item Assume $\mid x - w \mid < d$ is true \# antecedent
                 \begin{description}
-                \item Assume $\mid x - w \mid < d$ is true \# antecedent
-                    \begin{description}
-                    \item Then $y - 1 < \floor{y} \leq y$ and $x - 1 < \floor{x} \leq x$ \# See proof 1.1
-                    \item Then $\floor{x} = x \pm 1$ and $\floor{y} = y \pm 1$ \# the floor of a value will therefore always be within 1 of the value
-                    \item Then $\mid x - q \mid < e + 2$ \# Antecedent
-                    \item Then $\mid (\floor{x} \pm 1) - (\floor{y} \pm 1) \mid < e + 2$
-                    \item Then $\mid \floor{x} - \floor{y} \mid + 2 < e$ \# move the $\pm$s out of the absolute value; they become simply positive two.
-                    \item Then $\mid \floor{x} - \floor{y} \mid < e$
-                    \end{description}
-                        
-                \item Then $\mid x - w \mid < d \implies \mid \floor{x} - \floor{y} \mid < e$
+                \item Then $w - 1 < \floor{w} \leq y$ and $x - 1 < \floor{x} \leq x$ \# By definition of floor, $\forall z \in \mathbb{Z}, z \leq x \implies z \leq \floor{x}$ and $\floor{x} \leq x$
+                \item Then $\floor{x} = x \pm 1$ and $\floor{w} = w \pm 1$ \# therefore the floor of a value will therefore always be within $\pm 1$ of the value
+                \item Then $\mid (\floor{x} \pm 1) - (\floor{w} \pm 1) \mid < e + 2$ \# Using the antecedent, sub in for $x$ and $w$.
+                \item Then $\mid \floor{x} - \floor{w} \pm 2 \mid < e + 2$ \# Associative property of addition
+                \item Then $\mid \floor{x} - \floor{w} \mid + 2 < e + 2$ \# move the $\pm$s out of the absolute value; they become simply positive two at maximum and zero at minimum, so the inequality holds.
+                \item Then $\mid \floor{x} - \floor{w} \mid < e$ \# Subtract 2 from both sides.
                 \end{description}
-            \item Then $\forall w \in \mathbb{R}, \mid x - w \mid < d \implies \mid \floor{x} - \floor{y} \mid < e$
+                        
+            \item Then $\mid x - w \mid < d \implies \mid \floor{x} - \floor{y} \mid < e$
             \end{description}
         \item Then $\exists d \in \mathbb{R}^+, \forall w \in \mathbb{R}, \mid x - w \mid < d \implies \mid \floor{x} - \floor{y} \mid < e$
         \end{description}
-    \item Then $\forall e \in \mathbb{R}^2, \exists d \in \mathbb{R}^+, \forall w \in \mathbb{R}, \mid x - w \mid < d \implies \mid \floor{x} - \floor{y} \mid < e$
     \item Then $\forall x \in \mathbb{R}, \forall e \in \mathbb{R}^2, \exists d \in \mathbb{R}^+, \forall w \in \mathbb{R}, \mid x - w \mid < d \implies \mid \floor{x} - \floor{y} \mid < e$
     \end{description}
 
-\item For $x\in\mathbb{R}$, define  $\floor{x}$ by:
-    \begin{equation*}
-        \floor{x} \in\mathbb{Z} \wedge \floor{x}
-        \leq x \wedge (\forall z \in\mathbb{Z}, z \leq x \Rightarrow z
-        \leq \floor{x}).
-    \end{equation*}
-    \ldots where $\mathbb{Z}$ stands for the set of integers, and
-    $\mathbb{R}$ stands for the set of real numbers.
-    Use the definition of $\floor{x}$ to prove or disprove each of the
-    following claims, using the structured proof technique from this
-    course.  \textbf{Note:} You must use the definition given here,
-    not some other (possibly equivalent) definition for $\floor{x}$.
-  \begin{description}
-  \item[Claim 1.1:] ~ 
-    \begin{equation*}
-      \forall x \in\mathbb{R}, \forall y \in\mathbb{R}, x > y \Rightarrow
-      \floor{x} \geq \floor{y}.
-    \end{equation*}
-  \item[Claim 1.2:] ~
-    \begin{equation*}
-  \forall x\in\mathbb{R}, \forall e \in\mathbb{R}^+, \exists
-  d \in\mathbb{R}^+, \forall w\in\mathbb{R}, |x-w|< d
-  \Rightarrow |\floor{x}  - \floor{w}| < e
-    \end{equation*}
-  \item[Claim 1.3:] ~
-    \begin{equation*}
-        \exists x\in\mathbb{R}, \forall e \in\mathbb{R}^+, \exists
-  d \in\mathbb{R}^+, \forall w\in\mathbb{R}, |x-w|< d
-  \Rightarrow |\lfloor x\rfloor - \lfloor w\rfloor| < e
-    \end{equation*}
-  \item[Claim 1.4:] ~
-    \begin{equation*}
-      \exists x \in\mathbb{R}, \floor{x + 1} \neq \floor{x} + 1
-    \end{equation*}
-  \end{description}
-
-\item \textbf{Prove} or \textbf{disprove} the claim, and
-  \textbf{prove} or \textbf{disprove} the converse:
-  \begin{description}
-  \item[Claim 2.1:] ~
-    \begin{equation*}
-      \forall n \in\mathbb{N}, \left(\exists k\in\mathbb{N}, n =
-        5k+2\right) \Rightarrow \left(\exists j\in\mathbb{N}, n^2 = 5j+4\right)
-    \end{equation*}
-  \item[Claim 2.2:] ~
-    \begin{equation*}
-      \forall m, n\in\mathbb{N}, \left(\exists k\in\mathbb{N}, m =
-        7k+3\right) \wedge \left(\exists j\in\mathbb{N}, n = 7j + 4\right)
-      \Rightarrow \left(\exists i\in\mathbb{N}, mn = 7i + 5\right)
-    \end{equation*}
-  \end{description}
-
+\item Proving 1.4 False.
+		\begin{description}
+		\item The negation of claim 1.4 would be:
+		\item $\forall x \in \floor{x+1} = \floor{x} + 1$
+				\begin{description}
+				\item Assume $x$ to be any generic number.
+						\begin{description}
+						\item $\exists Z_{0}, Z_1$ such that $Z_0 \leq x+1$, $Z_1 \leq x$
+						\item Then, $Z_{0} - 1 \leq x$ \#This is the largest integer less than x, since subtracting one from the largest integer less than or equal to x+1 will give the largest integer less than x.
+						\item But, $Z_1$, by definition is also the largest integer less than or equal to x.
+						\item Then $Z_0 = Z_1 + 1$
+						\item Substituting for the values of $Z_0$, and $Z_1$, $\floor{x+1} = \floor{x}+1$
+						\end{description}
+				\item Then, $\floor{x+1} = \floor{x}+1$
+				\end{description}
+		\item Then $\forall x \in \floor{x+1} = \floor{x} + 1$
+		\end{description}
+\item Proving claim 2.2 is false, and disproving its converse.
+		\begin{description}
+				\item Assume m, and n to be generic. \# Domain assumption
+						\begin{description}
+								\item Let $k_0$, $j_0$ be a natural numbers
+								\item Assume $m = 7k_0 + 3$ and $n = 7j_0 + 4$ \# Antecedent
+										\begin{description}
+												\item Then, evaluating $mn$, we get $mn = (7k_0 + 3)(7j_0 +4)$
+										\item $mn = 49k_0j_0 + 28k_0 + 21j_0 + 12$ \# Expand the product
+										\item $mn = 49k_0j_0 + 28k_0 + 21j_0 + 7 + 5$ \# Change 12 into 7+5
+										\item $mn = 7(7k_0j_0 + 6k_0 + 3j_0 + 1) +5$ \# Factor out 7 from the first 4 terms.
+										\end {description}
+								
+								\item Then, there exists $i_0 \in \mathbb{N}$ \# Natural numbers are closed under addition and multiplication.
+								\item Then, $mn$ can be written in the form $7i_0 + 5$
+						\end{description}
+				\item Then, $\forall m,n \in \mathbb{N}$, ($\exists k \in \mathbb{N}, m = 7k + 3$) $\wedge$ ($\exists j \in \mathbb{N}, n = 7j + 4$) $\Rightarrow$ ($\exists i \in \mathbb{N}, mn = 7i + 5$)
+		\end{description}
+\item Proving the converse of 2.2 is false. We will continue by finding the converse, and then proving the negation of its contrapositive.
+\begin{description}
+		\item The converse of 2.2 is $\forall m,n$ ($\exists i \in \mathbb{N}, mn = 7i + 5$) $\Rightarrow$ ($\exists k \in \mathbb{N}, m = 7k + 3$) $\wedge$ ($\exists j \in \mathbb{N}, n = 7j + 4$)
+		\item Its contrapositive is $\forall m,n$ ($\forall k \in \mathbb{N}, m \neq 7k+3$) $\vee$ ($\forall j \in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\forall i \in \mathbb{N} mn \neq 7i + 5$
+		\item The negation is $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\exists i \in \mathbb{N} mn = 7i + 5$. We will prove this.
+		\begin{description}
+			\item Choose $m = 5$ \# $5 (mod 7) \not \equiv 3 (mod 7)$. Antecedent assumption
+			\item Choose $n = 15$ \# $7 (mod 7) \not \equiv 4 (mod 7$). Antecedent assumption
+			\item $mn = 5 \times 7 = 75 \equiv 5 (mod 7)$ \# Evaluate m $\times$ n.
+			\item $75 = 7\times 5 + 5$ \# Realize that 7 is equal to some integer i (5), such that 7$\times$ i + 5 = 35
+		\end{description}
+		\item Then, $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\exists i \in \mathbb{N} mn = 7i + 5$ \# Assumed antecendent, got consequent.
+\end{description}
 \end{enumerate}
 
 \end{document}

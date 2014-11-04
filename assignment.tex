@@ -22,7 +22,7 @@ blank, or write ``I cannot answer this.''  You will receive 0 for any
 false claim you ``prove,'' or any true claim you ``disprove.''
 
 \begin{enumerate}
-\item Proving the statement 1.1 true.
+\item Proving the statement 1.1 true.  %1.1
     \begin{description}
     \item Assume $x \in \mathbb{R}$ \# generic
         \begin{description}
@@ -43,7 +43,8 @@ false claim you ``prove,'' or any true claim you ``disprove.''
         \end{description}
     \item Conclude $\forall x \in \mathbb{R}, \forall y \in \mathbb{R}, x < y \implies \floor{x} \geq \floor{y}$
     \end{description}
-\item Proving the statment 1.2 true.
+
+\item Proving the statement 1.2 true.   %1.2
     \begin{description}
     \item Assume $x \in \mathbb{R}, e \in \mathbb{R}^+$ \# generic
         \begin{description}
@@ -67,7 +68,8 @@ false claim you ``prove,'' or any true claim you ``disprove.''
         \end{description}
     \item Then $\forall x \in \mathbb{R}, \forall e \in \mathbb{R}^2, \exists d \in \mathbb{R}^+, \forall w \in \mathbb{R}, \mid x - w \mid < d \implies \mid \floor{x} - \floor{y} \mid < e$
     \end{description}
-\item Proving the statement 1.3 true.
+
+\item Proving the statement 1.3 true. %1.3
     \begin{description}
     \item Let $x = 0.5$ \# 0.5 is a positive real number
     \item Then $x \in \mathbb{R}$
@@ -86,7 +88,8 @@ false claim you ``prove,'' or any true claim you ``disprove.''
         \end{description}
     \item Then $\exists x\in\mathbb{R}, \forall e \in\mathbb{R}^+, \exists d \in\mathbb{R}^+, \forall w\in\mathbb{R}, |x-w|< d \implies |\lfloor x\rfloor - \lfloor w\rfloor| < e$
     \end{description}
-\item Proving 1.4 False.
+
+\item Proving 1.4 False. %1.4
 		\begin{description}
 		\item The negation of claim 1.4 would be:
 		\item $\forall x \in \floor{x+1} = \floor{x} + 1$
@@ -104,7 +107,8 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 				\end{description}
 		\item Then $\forall x \in \floor{x+1} = \floor{x} + 1$
 		\end{description}
-\item Proving 2.1 is true, and proving the converse of 2.1 is false.
+
+\item Proving 2.1 is true, and proving the converse of 2.1 is false:% 2.1
 		\begin {description}
 				\item Let n be any natural number. \# Domain assumption.
 				\begin{description}
@@ -117,17 +121,21 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 				\end {description}
 				\item Then $\forall n \in \mathbb{N}$, $\exists k \in \mathbb{N}, n = 5k+2 \Rightarrow \exists j \in \mathbb{N}, n^2 = 5j+4$
 		\end {description}
-\item Proving the converse of 2.1 is false.
-\item The converse of 2.1 would be $\forall n \in \mathbb{N}$, $\exists j \in \mathbb{N}, n^2 = 5j+4 \Rightarrow \exists k \in \mathbb{N}, n = 5k+2$
-\item The negation of the converse of 2.1 would be $\exists n \in \mathbb{N}$, $\exists j \in \mathbb{N}, n^2 = 5j+4 \wedge \forall k \in \mathbb{N}, n \neq 5k+2$
+Proving the converse of 2.1 is false:\\
+The converse of 2.1 would be:\\
+$\forall n \in \mathbb{N}$, $\exists j \in \mathbb{N}, n^2 = 5j+4 \Rightarrow \exists k \in \mathbb{N}, n = 5k+2$\\
+The negation of the converse of 2.1 would be: \\
+$\exists n \in \mathbb{N}$, $\exists j \in \mathbb{N}, n^2 = 5j+4 \wedge \forall k \in \mathbb{N}, n \neq 5k+2$\\
 		\begin {description}
 				\item Choose $n = 9$ \# $n \in \mathbb{N}$
 				\item Then, $n^2$ can be written in the form of $5j + 4$, where $j = 1$. \# Then, $j \in \mathbb{N}$
 				\item Then, $n = 3$ \# Simply taking the square root of $n^2$
 				\item But $n$ cannot be written in the form of $5k + 3$, for any $k$.
 				\item Thus, $\exists j \in \mathbb{N}, n^2 = 5j+4 \wedge\forall k \in \mathbb{N}, n \neq 5k+2$
-		\end{description}
+		
 		\item Then, $\exists n \in \mathbb{N}$, $\exists j \in \mathbb{N}, n^2 = 5j+4 \wedge \forall k \in \mathbb{N}, n \neq 5k+2$ \# We've proved the negation of the converse, so we disproved the converse.
+		\end{description}
+
 \item Proving claim 2.2 is true, and disproving its converse.
 		\begin{description}
 				\item Assume $m, n \in \mathbb{R}$ \# generic
@@ -147,20 +155,22 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 						\end{description}
 				\item Then, $\forall m,n \in \mathbb{N}$, ($\exists k \in \mathbb{N}, m = 7k + 3$) $\wedge$ ($\exists j \in \mathbb{N}, n = 7j + 4$) $\Rightarrow$ ($\exists i \in \mathbb{N}, mn = 7i + 5$)
 		\end{description}
-\item Proving the converse of 2.2 is false. We will continue by finding the converse, and then proving the negation of its contrapositive.
-\begin{description}
-		\item The converse of 2.2 is $\forall m,n$ ($\exists i \in \mathbb{N}, mn = 7i + 5$) $\Rightarrow$ ($\exists k \in \mathbb{N}, m = 7k + 3$) $\wedge$ ($\exists j \in \mathbb{N}, n = 7j + 4$)
-		\item Its contrapositive is $\forall m,n$ ($\forall k \in \mathbb{N}, m \neq 7k+3$) $\vee$ ($\forall j \in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\forall i \in \mathbb{N} mn \neq 7i + 5$
-		\item The negation is $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j \in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ ($\exists i \in \mathbb{N}, mn = 7i + 5)$.
+
+Proving the converse of 2.2 is false. We will continue by finding the converse, and then proving the negation of its contrapositive.\\
+
+The converse of 2.2 is $\forall m,n$ ($\exists i \in \mathbb{N}, mn = 7i + 5$) $\Rightarrow$ ($\exists k \in \mathbb{N}, m = 7k + 3$) $\wedge$ ($\exists j \in \mathbb{N}, n = 7j + 4$)\\
+Its contrapositive is $\forall m,n$ ($\forall k \in \mathbb{N}, m \neq 7k+3$) $\vee$ ($\forall j \in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\forall i \in \mathbb{N} mn \neq 7i + 5$\\
+The negation is $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j \in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ ($\exists i \in \mathbb{N}, mn = 7i + 5)$.\\
 		\begin{description}
 			\item Let $m \in \mathbb{N}, m = 10$
 			\item Then $\forall k \in \mathbb{N}, m \neq 7k + 3$ is false, there exists $k$ with value of 1 which causes it to evaluate false.
 			\item Let $n \in \mathbb{N}, n = 11$
 			\item Then $\forall j \in \mathbb{N}, n \neq 7j + 4$ is false, there exists $j$ with value of 1 which causes it to evaluate false.
 			\item Then the antecedent is always false and, therefore, the implication is true.
-		\end{description}
+		
 		\item Then, $\exists m,n$ ($\forall k \in \mathbb{N}, m \neq 7k + 3$) $\vee$ ($\forall j in \mathbb{N}, n \neq 7j + 4$) $\Rightarrow$ $\exists i \in \mathbb{N} mn = 7i + 5$ \# Assumed antecendent, got consequent.
-\end{description}
+		\end{description}
+
 \end{enumerate}
 
 \end{document}

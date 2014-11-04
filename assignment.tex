@@ -43,7 +43,7 @@
             \item Assume $\mid x - w \mid < d$ is true \# antecedent
                 \begin{description}
                 \item Then $w - 1 < \floor{w} \leq w$ and $x - 1 < \floor{x} \leq x$ \# By definition of floor, $\forall z \in \mathbb{Z}, z \leq x \implies z \leq \floor{x}$ and $\floor{x} \leq x$
-                \item Then $\mid\floor{x} - x\mid = 1$ and $\mid\floor{w} - w \mid = 1$ \# therefore the floor of a value will therefore always be within $\pm 1$ of the value
+                \item Then $\floor{x} = x \pm 1$ and $\floor{w} = w \pm 1$ \# therefore the floor of a value will therefore always be within $\pm 1$ of the value
                 \item Then $\mid (\floor{x} \pm 1) - (\floor{w} \pm 1) \mid < e + 2$ \# Using the antecedent, sub in for $x$ and $w$.
                 \item Then $\mid \floor{x} - \floor{w} \pm 2 \mid < e + 2$ \# Associative property of addition
                 \item Then $\mid \floor{x} - \floor{w} \mid + 2 < e + 2$ \# move the $\pm$s out of the absolute value; they become simply positive two at maximum and zero at minimum, so the inequality holds.

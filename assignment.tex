@@ -96,8 +96,8 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 				\begin{description}
 				\item Assume $x \in \mathbb{R}$ \# Generic
 						\begin{description}
-						\item $\exists Z_{0}, Z_1$ such that $Z_0 \leq x+1 \wedge \forall Z_0 \in \mathbb{Z} Z_0 \leq x+1 \Rightarrow Z_0 \leq \floor{x+1}$ \# Definition of floor.
-						\item $\exists Z_1, Z_1$ such that $Z_1 \leq x \wedge \forall Z_1 \in \mathbb{Z}, Z_1 \leq x \Rightarrow Z_1 \leq \floor{x}$ \# Definition of floor.
+						\item $\exists Z_{0}$ such that $Z_0 \leq x+1 \wedge \forall Z_0 \in \mathbb{Z} Z_0 \leq x+1 \Rightarrow Z_0 \leq \floor{x+1}$ \# Definition of floor.
+						\item $\exists Z_1$ such that $Z_1 \leq x \wedge \forall Z_1 \in \mathbb{Z}, Z_1 \leq x \Rightarrow Z_1 \leq \floor{x}$ \# Definition of floor.
 						\item Then $Z_0 = \floor{x+1}$ and $Z_1 = \floor{x}$
 						\item Then, $Z_{0} - 1 \leq x$ \# $Z_0$ is the largest integer less than or equal to x+1. Then, $Z_0 - 1$ is the largest integer less than x, since subtracting one from both sides of the inequality $Z_0 \leq x +1$ will give the largest integer less than x.
 						\item Then $Z_1 \leq x$ \# By definition of floor, $Z_1$ is also the largest integer less than or equal to x.
@@ -128,17 +128,16 @@ false claim you ``prove,'' or any true claim you ``disprove.''
 
 Proving the converse of 2.1 is false:\\
 The converse of 2.1 would be:\\
-$\forall n \in \mathbb{N}$, $\exists j \in \mathbb{N}, n^2 = 5j+4 \Rightarrow \exists k \in \mathbb{N}, n = 5k+2$\\
+$\forall n \in \mathbb{N}$, ($\exists j \in \mathbb{N}, n^2 = 5j+4) \Rightarrow (\exists k \in \mathbb{N}, n = 5k+2$)\\
 The negation of the converse of 2.1 would be:\\
 $\exists n \in \mathbb{N}$, ($\exists j \in \mathbb{N}, n^2 = 5j+4) \wedge (\forall k \in \mathbb{N}, n \neq 5k+2$)
 		\begin {description}
-				\item Choose $n = 9$ \# $n \in \mathbb{N}$
-				\item Then, $n^2$ can be written in the form of $5j + 4$, where $j = 1$. \# Then, $j \in \mathbb{N}$
-				\item Then, $n = 3$ \# Simply taking the square root of $n^2$
-				\item But $n$ cannot be written in the form of $5k + 3$, for any $k$. \# Since n divided by 5 does not give remainder 3.
-				\item Thus, $\exists j \in \mathbb{N}, n^2 = 5j+4 \wedge\forall k \in \mathbb{N}, n \neq 5k+2$ 
-		
-		\item Then, $\exists n \in \mathbb{N}$, ($\exists j \in \mathbb{N}, n^2 = 5j+4) \wedge (\forall k \in \mathbb{N}, n \neq 5k+2$) \# We've proved the negation of the converse, so we disproved the converse.
+				\item Choose $n = 3$ \# $n \in \mathbb{N}$
+				\item Let $j \in \mathbb{N}, j = 1$, then $\exists j \in \mathbb{N}, n^2 = 5j+4$ is true.
+				\item Then the latter statement is $\forall k \in \mathbb{N}, 3 \neq 5k + 2$
+				\item Then it may be simplified as $\forall k \in \mathbb{N}, 1 \neq 5k$
+				\item 5 does not divide 1, therefore the latter statement is false.
+				\item Then, $\exists n \in \mathbb{N}$, ($\exists j \in \mathbb{N}, n^2 = 5j+4) \wedge (\forall k \in \mathbb{N}, n \neq 5k+2$) \# We've proved the negation of the converse, so we disproved the converse.
 \end{description}
 
 \item Proving claim 2.2 is true, and disproving its converse.

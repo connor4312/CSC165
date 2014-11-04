@@ -100,11 +100,15 @@
 		\begin {description}
 				\item Let n be any natural number. \# Domain assumption.
 				\begin{description}
-						\item Let $k_0$ be a natural number. \# Thus, $k \in \mathbb{N}$
-						\item Then, $n = 5k_0 + 2$ \#Antecedent assumption
-						\item $n^2 = (5k_0 + 2)(5k_0 + 2) = 25 k_0^2 + 20k_0 + 4 = 5(5k_0^2 + 4k_0) + 4$ \#Simplifying $n^2$
-						\item Then $j_0 = 5k_0^2 + 4k_0$ \# $j_0 \in \mathbb{N}$, since natural numbers closed under addition, multiplication, and exponentiation.
-						\item Then $\exists j \in \mathbb{N}$ such that $n^2 = 5j+4$ \# $j_0$ is such a number.
+						\item Assume, $\exists k \in \mathbb{N}, n = 5k_0 + 2$ \# Antecedent
+							\begin{description}
+							\item Let $j = 5k^2 + 4k$ \#
+							\item Then $j \in \mathbb{N}$, since natural numbers closed under addition, multiplication.
+							\item Then $n^2 = (5k + 2)(5k + 2) = 25 k^2 + 20k + 4 = 5(5k^2 + 4k) + 4$ \# Substituting in antecedent for $n^2$
+							\item Then $n^2 = 5j + 4$ \# Substituting $j$ into the equation.
+							\item Then $\exists j \in \mathbb{N}, n^2 = 5j + 4$
+							\end{description}
+						\item Then $(\exists k \in \mathbb{N}, n = 5k + 2) \implies (\exists j \in \mathbb{N}, n^2 = 5j + 4)$ such that $n^2 = 5j+4$
 				\end {description}
 				\item Then $\forall n \in \mathbb{N}$, $\exists k \in \mathbb{N}, n = 5k+2 \Rightarrow \exists j \in \mathbb{N}, n^2 = 5j+4$ \#Thus, proving the negation of the statement disproves the statement
 		\end {description}

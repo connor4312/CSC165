@@ -1,0 +1,54 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\title{CSC165 Fall 2014, Assignment 3}
+\author{Anish Krishna, Connor Peet, George Wu}
+\renewcommand{\today}{~}
+\hypersetup{pdfpagemode=Fullscreen,
+  colorlinks=true,
+  linkfileprefix={}}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+\begin{document}
+\maketitle
+
+
+\begin{enumerate}
+\item Proving the statement 1 true.
+    \begin{description}
+    \item Assume $e \in \mathbb{R}^+$ \# generic
+    		\begin{description}
+    		\item Let $d = 1$
+    		\item Then $d \in \mathbb{R}^+$ \# 1 is a positive, real number.
+    		\item Assume $x, y \in \mathbb{R}^+$ and that $|x - y| > d$ \# Generic, antecedent assumption
+    			\begin{description}
+    			\item Then $\forall z_- \in \mathbb{Z}, z_- < x - y \implies z_- < \floor{x - y}$ \# Definition of floor
+    			\item Also $\forall z_+ \in \mathbb{Z}, z_+ < x + y \implies z_+ < \floor{x + y}$ \# Definition of floor
+    			\item Then $x + y \geq x - y + 1$ \# antecedent
+    			\item Then there will always be a $z_+ = z_- + 1$ which satisfies floor's antecedent.
+    			\item Then $\floor{x + y} > \floor{x - y}$ 
+    			\end{description}
+    		\end{description}
+    \item Then $\forall e \in \mathbb{R}^+, \exists d \in \mathbb{R}^+, \forall x, y \in \mathbb{R}^+, |x - y| > d \implies |x + y| > e$.
+    \end{description}
+\item Proving statement 2 true, where $f(n) = 6n^3 - 4n^2 + 3n + 2$ and $g(n) = 5n^3 - n^2 + n + 1$
+	\begin{description}
+	\item Let $c = 1$
+	\item Then $c \in \mathbb{R}^+$ \# 1 is a positive real number.
+	\item Let $b = 3$
+	\item Then $c \in \mathbb{N}$ \# 3 is a natural number.
+	\item Assume $n \in \mathbb{N}$
+		\begin{description}
+		\item Then $f(n) = 6n^3 - 4n^2 + 3n + 2$
+		\item Then $f(n) \geq 6n^3 - 4n^2 + n + 1$ \# Subtract $2n + 1$, which is greater than zero because $n \in \mathbb{R}^+$
+		\item Then $f(n) \geq 5n^3 - n^2 + n + 1$ \# Subtract $n^3 - 3n^2$, which is greater than or equal to zero because $n \geq 3$
+		\item Then $f(n) \geq g(n)$ \# Substitue in $g(n)$
+		\item Then $f(n) \geq cg(n)$ \# $c = 1$, identity property of multiplication
+		\end{description}
+	\item Then $\exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in n, n \geq B \implies f(n) \geq cg(n)$
+	\item Then $6n^3 - 4n^2 + 3n + 2 \in \Omega(5n^3 - n^2 + n + 1)$
+	\end{description}
+\end{enumerate}
+
+\end{document}
+
+% LocalWords:  brachial

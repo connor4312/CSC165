@@ -13,19 +13,25 @@
 
 
 \begin{enumerate}
-\item Proving the statement 1 true.
+\item Proving the statement 1 true. Recall the definition of floor:
+    \begin{equation*}
+        \floor{x} \in\mathbb{Z} \wedge \floor{x}
+        \leq x \wedge (\forall z \in\mathbb{Z}, z \leq x \Rightarrow z
+        \leq \floor{x})
+    \end{equation*}
+    Then:
     \begin{description}
     \item Assume $e \in \mathbb{R}^+$ \# generic
     		\begin{description}
-    		\item Let $d = 1$
-    		\item Then $d \in \mathbb{R}^+$ \# 1 is a positive, real number.
+    		\item Let $d = e + 1$
+    		\item Then $d \in \mathbb{R}^+$ \# $\mathbb{R}^+$ bounded by addition
     		\item Assume $x, y \in \mathbb{R}^+$ and that $|x - y| > d$ \# Generic, antecedent assumption
     			\begin{description}
-    			\item Then $\forall z_- \in \mathbb{Z}, z_- < x - y \implies z_- < \floor{x - y}$ \# Definition of floor
-    			\item Also $\forall z_+ \in \mathbb{Z}, z_+ < x + y \implies z_+ < \floor{x + y}$ \# Definition of floor
-    			\item Then $x + y \geq x - y + 1$ \# antecedent
-    			\item Then there will always be a $z_+ = z_- + 1$ which satisfies floor's antecedent.
-    			\item Then $\floor{x + y} > \floor{x - y}$ 
+    			\item Then $\floor{x - y} > e + 1$ \# Antecedent
+    			\item Also $x + y > x - y$ \# Since $x, y \in \mathbb{R}^+$
+    			\item Then $\floor{x + y} \geq \floor{x - y}$ \# By definition the floor of a larger number will never be less than the floor of a smaller number: $\floor{x} \leq x \wedge (\forall z \in\mathbb{Z}, z \leq x \Rightarrow z \leq \floor{x})$
+    			\item Then $\floor{x + y} \geq e + 1 > e$ \# Sub in with antecedent
+    			\item Then $\floor{x + y} > e$
     			\end{description}
     		\end{description}
     \item Then $\forall e \in \mathbb{R}^+, \exists d \in \mathbb{R}^+, \forall x, y \in \mathbb{R}^+, |x - y| > d \implies |x + y| > e$.

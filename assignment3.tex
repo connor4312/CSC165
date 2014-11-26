@@ -13,25 +13,18 @@
 
 
 \begin{enumerate}
-\item Proving the statement 1 true. Recall the definition of floor:
-    \begin{equation*}
-        \floor{x} \in\mathbb{Z} \wedge \floor{x}
-        \leq x \wedge (\forall z \in\mathbb{Z}, z \leq x \Rightarrow z
-        \leq \floor{x})
-    \end{equation*}
-    Then:
+\item Proving the statement 1 true.
     \begin{description}
     \item Assume $e \in \mathbb{R}^+$ \# generic
     		\begin{description}
-    		\item Let $d = e + 1$
-    		\item Then $d \in \mathbb{R}^+$ \# $\mathbb{R}^+$ bounded by addition
+    		\item Let $d = e$
+    		\item Then $d \in \mathbb{R}^+$ \# e is a positive, real number.
     		\item Assume $x, y \in \mathbb{R}^+$ and that $|x - y| > d$ \# Generic, antecedent assumption
     			\begin{description}
-    			\item Then $\floor{x - y} > e + 1$ \# Antecedent
-    			\item Also $x + y > x - y$ \# Since $x, y \in \mathbb{R}^+$
-    			\item Then $\floor{x + y} \geq \floor{x - y}$ \# By definition the floor of a larger number will never be less than the floor of a smaller number: $\floor{x} \leq x \wedge (\forall z \in\mathbb{Z}, z \leq x \Rightarrow z \leq \floor{x})$
-    			\item Then $\floor{x + y} \geq e + 1 > e$ \# Sub in with antecedent
-    			\item Then $\floor{x + y} > e$
+    			\item Then $x + y = |x + y|$ \# $\mathbb{R}^+$ closed by addition, the absolute value of a positive number is that number.
+    			\item Also $x + y > |x - y|$ \# The sum of two positive real numbers will always be greater than their difference.
+    			\item Then $|x + y| > d$ \# Sub in, by antecedent
+    			\item Then $|x + y| > e$
     			\end{description}
     		\end{description}
     \item Then $\forall e \in \mathbb{R}^+, \exists d \in \mathbb{R}^+, \forall x, y \in \mathbb{R}^+, |x - y| > d \implies |x + y| > e$.

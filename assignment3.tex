@@ -66,6 +66,22 @@
 		\end{description}
 		\item Then $\forall B \in \mathbb{N}, \forall c \in \mathbb{R}, \exists n \in \mathbb{N}, n\geq B \wedge 15n^2 < c\times 3 \times 2^n$
 	\end{description}
+	
+\begin{description}
+	\item We know that $\lim_{x\to\infty}\frac{2^n}{3^n}=\lim_{x\to\infty} \left(\frac{2}{3}\right)^n = 0$
+	\item Pick $c = 1$, $B = 0$
+	\item Assume $n$ to be any natural number and $n \geq B$
+	\begin{description}
+		\item Then $\exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow -c< \frac{2^n}{3^n} < c$ \# We know that the limit exists, so we simply set e = c.
+		\item Let $M = B$.
+		\item Then we know that $\forall n \in \mathbb{N}, n \geq B \Rightarrow \frac{2^n}{3^n} < 1$
+		\item Then $n \in \mathbb{N}$ and $n \geq M = B$
+		\item Then $\frac{2^n}{3^n} < 1$ \# Setting c = 1.
+		\item Then $2^n < 3^n$ \# since $n \geq M$, so we know that $3^n$ is positive.
+		\item Then $n \geq B \Rightarrow 2^n < 3^n$
+	\end{description}
+	\item Then $\exists B \in \mathbb{N}, \exists c \in \mathbb{R}^+, \forall n \in \mathbb{N}, n \geq B \Rightarrow 2^n \leq 3^n$
+\end {description}
 \end{enumerate}
 
 \end{document}

@@ -49,14 +49,15 @@
 	
 \item Proving number 3 is false.
 	\begin{description}
-		\item Using limits, we know that:	
+		\item Using l'Hopital's rule, we know that:	
 		\begin{equation*}
 		\lim_{x\to\infty}\frac{15n^2}{3 \times 2^n}=0
 		\end{equation*}
 		\item Negation of the given statement is the following: $\forall B \in \mathbb{N}, \forall c \in \mathbb{R}, \exists n \in \mathbb{N}, n\geq B \wedge 15n^2 < c\times 3 \times 2^n$
-		\item Assume $B$ to be any natural number and $c$ to be any $\mathbb{R}^+$.
+		\item Assume $B \in \mathbb{N}, c \in \mathbb{R}^+$.
 		\begin{description}
-			\item By the definition of limit being equal to 0, we know that $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow -e < \frac{15n^2}{3\times n^2}< e$
+			\item Then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow L - e < \frac{15n^2}{3\times n^2}< L + e$ \# Definition of limit
+			\item Then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow -e < \frac{15n^2}{3\times n^2}< e$ \# L = 0, by l'Hopital's rule
 			\item Then, $\exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow \frac{15n^2}{3\times n^2} < c$ \# We let e = c.
 			\item Let $M$ be such that $\forall n \in \mathbb{N}, n \geq M \Rightarrow \frac{15n^2}{3\times n^2} < c$ and choose $n = \max(M,B)$
 			\item Then $n \in \mathbb{N}$

@@ -88,6 +88,58 @@
 	\end{description}
 	\item Then $\exists B \in \mathbb{N}, \exists c \in \mathbb{R}^+, \forall n \in \mathbb{N}, n \geq B \Rightarrow 2^n \leq 3^n$
 \end {description}
+\item Proving number 5 to be true.
+\begin{description}
+	\item Defininition of $\mathcal{O}(g):\\ \exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in n, n \geq B \implies f(n) \leq cg(n)$
+	\item Defininition of $\Omega(g):\\ \exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in n, n \geq B \implies f(n) \geq cg(n)$
+	\item Assume f,g $\in \mathcal{F}$
+	\item Let $c = \mathbb{R}^+$
+	\item Let B $\in \mathbb{N}$
+	\item Assume n $\in \mathbb {N}$
+	\begin{description}
+		\item Case 1:
+			\begin{description}
+			\item Assume f(n) $\leq$ cg(n)
+			\item Then Case 1 satisfies definition of $\mathcal{O}(g)$
+			\end{description}
+		\item Case 2:
+			\begin{description}
+			\item Assume f(n) $\geq$ cg(n)
+			\item Then $\lnot(f(n) \leq cg(n)) = f(n) > cg(n)$ 
+			\item Then Case 2 satisfies defintition of $\Omega(g)$  \# $ f(n) > cg(n) = f(n) \geq cg(n)$
+			\end{description}
+		\item Then Case 1 and Case 2 covers all possible cases
+	\end{description}
+	\item Then $f\in\mathcal{O}(g) \vee f\in\Omega(g)$
+	\item Then $\forall f, g\in\mathcal{F}, f\in\mathcal{O}(g) \vee f\in\Omega(g)$
+\end {description}
+
+\item Proving that the function \verb+meaning_of_life+ below is not computable:   %6
+Using proof by contradiction to prove non-computability. 
+\begin{description}
+	\item Assume  \verb+meaning_of_life+ is computable 
+	\begin{description}
+		\item Then 
+		\begin{verbatim}
+		def meaning_of_life(f, I):
+		 	"""Return True if f(I) returns 42, False otherwise."""
+			# Implementation omitted
+
+		def halt(f, i) :
+		   def P(x) :
+		      f(i)
+		      if True:
+		         return 42
+		   return meaning_of_life(P, x)
+		\end{verbatim}
+		\item Then the if statement block under halt function executes iff f(i) halts.
+		\item Then halt(f, i) returns True if f(i) halts, else it will return False. 
+		\item Contradiction. Halt functions are non-computable  \# General specification of halt functionality
+	\end{description}
+	\item Then  \verb+meaning_of_life+ is non-computable 
+
+
+\end {description}
 \end{enumerate}
 
 \end{document}

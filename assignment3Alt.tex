@@ -1,0 +1,193 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+
+
+\title{CSC165 Fall 2014, Assignment 3}
+\author{Anish Krishna, Connor Peet, George Wu}
+\renewcommand{\today}{~}
+\hypersetup{pdfpagemode=Fullscreen,
+  colorlinks=true,
+  linkfileprefix={}}
+\newcommand{\floor}[1]{\lfloor #1\rfloor}
+\begin{document}
+\maketitle
+
+
+\begin{enumerate}
+\item Proving the statement 1 true.
+    \begin{description}
+    \item Assume $e \in \mathbb{R}^+$ \# generic
+    		\begin{description}
+    		\item Let $d = e$
+    		\item Then $d \in \mathbb{R}^+$ \# e is a positive, real number.
+    		\item Assume $x, y \in \mathbb{R}^+$ and that $|x - y| > d$ \# Generic, antecedent assumption
+    			\begin{description}
+    			\item Then $x + y = |x + y|$ \# $\mathbb{R}^+$ closed by addition, the absolute value of a positive number is that number.
+    			\item Also $x + y > |x - y|$ \# The sum of two positive real numbers will always be greater than their difference.
+    			\item Then $|x + y| > d$ \# Sub in, by antecedent
+    			\item Then $|x + y| > e$
+    			\end{description}
+    		\end{description}
+    \item Then $\forall e \in \mathbb{R}^+, \exists d \in \mathbb{R}^+, \forall x, y \in \mathbb{R}^+, |x - y| > d \implies |x + y| > e$.
+    \end{description}
+\item Proving statement 2 true, where $f(n) = 6n^3 - 4n^2 + 3n + 2$ and $g(n) = 5n^3 - n^2 + n + 1$
+	\begin{description}
+	\item Let $c = 1$
+	\item Then $c \in \mathbb{R}^+$ \# 1 is a positive real number.
+	\item Let $b = 3$
+	\item Then $c \in \mathbb{N}$ \# 3 is a natural number.
+	\item Assume $n \in \mathbb{N}$
+		\begin{description}
+		\item Then $f(n) = 6n^3 - 4n^2 + 3n + 2$
+		\item Then $f(n) \geq 6n^3 - 4n^2 + n + 1$ \# Subtract $2n + 1$, which is greater than zero because $n \in \mathbb{R}^+$
+		\item Then $f(n) \geq 5n^3 - n^2 + n + 1$ \# Subtract $n^3 - 3n^2$, which is greater than or equal to zero because $n \geq 3$
+		\item Then $f(n) \geq g(n)$ \# Substitue in $g(n)$
+		\item Then $f(n) \geq cg(n)$ \# $c = 1$, identity property of multiplication
+		\end{description}
+	\item Then $\exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in n, n \geq B \implies f(n) \geq cg(n)$
+	\item Then $6n^3 - 4n^2 + 3n + 2 \in \Omega(5n^3 - n^2 + n + 1)$
+	\end{description}
+	
+\item Proving number 3 is false.
+	\begin{description}
+		\item Using l'Hopital's rule, we know that:	
+		\begin{equation*}
+		\lim_{x\to\infty}\frac{15n^2}{3 \times 2^n}=0
+		\end{equation*}
+		\item Negation of the given statement is the following: $\forall B \in \mathbb{N}, \forall c \in \mathbb{R}, \exists n \in \mathbb{N}, n\geq B \wedge 15n^2 < c\times 3 \times 2^n$
+		\item Assume $B \in \mathbb{N}, c \in \mathbb{R}^+$.
+		\begin{description}
+			\item Then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow L - e < \frac{15n^2}{3\times n^2}< L + e$ \# Definition of limit
+			\item Then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow -e < \frac{15n^2}{3\times n^2}< e$ \# L = 0, by l'Hopital's rule
+			\item Then, $\exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow \frac{15n^2}{3\times n^2} < c$ \# We let e = c.
+			\item Let $M$ be such that $\forall n \in \mathbb{N}, n \geq M \Rightarrow \frac{15n^2}{3\times n^2} < c$ and choose $n = \max(M,B)$
+			\item Then $n \in \mathbb{N}$
+			\item Then $n \geq B$ \# By definition of maximum.
+			\item Then $15n^2 < c \times 3 \times 2^n$\#Multiplying $3\times 2^n$ over the inequality. We know this is true because $2^n$ is positive, so this will not change the inequality.
+			\item Then $n \geq B$ and $15n^2 < c\times 3\times 2^n$.
+		\end{description}
+		\item Then $\forall B \in \mathbb{N}, \forall c \in \mathbb{R}, \exists n \in \mathbb{N}, n\geq B \wedge 15n^2 < c\times 3 \times 2^n$
+	\end{description}
+	
+\item Proving number 4 true.
+\begin{description}
+	\item We know that:
+	\begin{equation*}
+		\lim_{x\to\infty}\frac{2^n}{3^n}=\lim_{x\to\infty} \left(\frac{2}{3}\right)^n = 0
+	\end{equation*}
+	\item Pick $c = 1$, $B = 0$
+	\item Assume $n$ to be any natural number and $n \geq B$
+	\begin{description}
+		\item Then $\exists M \in \mathbb{N}, \forall n_1 \in \mathbb{N}, n_1 \geq M \Rightarrow -c< \frac{2^{n_1}}{3^{n_1}} < c$ \# We know that the limit exists, so we simply set e = c.
+		\item Choose $M = B$.
+		\item Then we know that $\forall n_1 \in \mathbb{N}, n_1 \geq B \Rightarrow \frac{2^{n_1}}{3^{n_1}} < 1$ \# Since c = 1.
+		\item Then $n_1 \in \mathbb{N}$ and $n_1 \geq M = B$
+		\item Then $n_1$ describes the same set of numbers as $n$
+		\item Then $\frac{2^{n_1}}{3^{n_1}} = \frac{2^n}{3^n} < 1$ \# Setting c = 1.
+		\item Then $2^n < 3^n$ \# since $n \geq M$, so we know that $3^n$ is positive.
+		\item Then $n \geq B \Rightarrow 2^n < 3^n$ \# Assumed antecedent and got conclusion.
+	\end{description}
+	\item Then $\exists B \in \mathbb{N}, \exists c \in \mathbb{R}^+, \forall n \in \mathbb{N}, n \geq B \Rightarrow 2^n \leq 3^n$
+\end {description}
+\item Proving number 5 to be False.
+We prove negation of cases with $\mathcal{O}(g)$ and $\Omega(g)$ respectively
+\begin{description}
+	\item Defininition of $\mathcal{O}(g):\\ \exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in n, n \geq B \implies f(n) \leq cg(n)$\
+	\item Defininition of $\lnot(\mathcal{O}(g)):\\ \forall c \in \mathbb{R}^+, \forall B \in \mathbb{N}, \exists n \in \mathbb{N}, n \geq B \implies f(n) > cg(n)$\
+	\item Defininition of $\Omega(g):\\ \exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq B \implies f(n) \geq cg(n)$\
+	\item Defininition of $\lnot\Omega(g):\\ \forall c \in \mathbb{R}^+, \forall B \in \mathbb{N}, \exists  n \in\mathbb{N}, n \geq B \implies f(n) < cg(n)$
+\begin{equation*}
+f(n) = \begin{cases}
+             6  & \text{if } n = 2k + 1(k \in \mathbb{N}) \# Odd \\
+             0  & \text{if } n = 2k(k \in \mathbb{N}) \# Even
+       \end{cases} \quad
+g(n) = \begin{cases}
+             0  & \text{if } n = 2k + 1(k \in \mathbb{N}) \# Odd \\
+             6  & \text{if } n = 2k(k \in \mathbb{N}) \# Even
+       \end{cases}
+\end{equation*}
+\item Proving $\lnot \mathcal{O}(g):$
+	\item Assume $c \in \mathbb{R}^+$
+	\begin{description}
+		\item Assume $B \in \mathbb{N}$
+			\begin{description}
+				\item Let m = Max($\ceil*{c}$, B)
+				\begin{description}
+					\item Case 1: 
+					\begin{description}
+						\item m is even  \# m $\in \mathbb{N}(\ceil*{c}, B \in \mathbb{N})$
+						\item Pick n = m + 1
+						\item Then n odd 
+						\item $f(n) > g(n)$ \# g(n) = 0 when n odd and f(n) = 6 when n odd. Therefore $6 > 0$
+					\end {description}
+					\item Case 2:
+					\begin{description}
+						\item m is odd  \# m $\in \mathbb{N}(\ceil*{c}, B \in \mathbb{N})$
+						\item Pick n = m
+						\item Then n odd 
+						\item $f(n) > g(n)$ \# g(n) = 0 when n odd and f(n) = 6 when n odd. Therefore $6 > 0$
+					\end {description}
+				\end {description}
+				\item Then n $\geq$ B 
+			\end {description}
+		\item Then n $\geq B \wedge f(n) > g(n)$
+	\end {description}
+	\item Assume $c' \in \mathbb{R}^+$
+	\begin{description}
+		\item Assume $ B' \in \mathbb{N}$
+			\begin{description}
+				\item Let m = Max($\ceil*{c'}, B'$)
+				\begin{description}
+					\item Case 1: 
+					\begin{description}
+						\item m is odd  \# m $\in \mathbb{N}(\ceil*{c}, B \in \mathbb{N})$
+						\item Pick n = m + 1
+						\item Then n is even 
+						\item $f(n) < g(n)$ \# g(n) = 0 when n odd and n: f(n) = 0. Therefore 0 < 6
+					\end {description}
+					\item Case 2:
+					\begin{description}
+						\item m is even \# m $\in \mathbb{N}(\ceil*{c}, B \in \mathbb{N})$
+						\item Pick n = m
+						\item Then n is even
+						\item Then $f(n) < g(n)$ \# g(n) = 6 when n even and f(n) = 0. Therefore 0 <  6
+					\end {description}
+				\item Then n $\geq$ B 
+				\end {description}
+		\item Then n $\geq B \wedge f(n) < g(n)$
+	\end  {description}
+	\item Then $\lnot (\forall f, g\in\mathcal{F}, f\in\mathcal{O}(g) \vee f\in\Omega(g))$
+\end{description}
+\item Proving that the function \verb+meaning_of_life+ below is not computable:   %6
+Using proof by contradiction to prove non-computability. 
+\begin{description}
+	\item Assume  \verb+meaning_of_life+ is computable 
+	\begin{description}
+		\item Then 
+		\begin{verbatim}
+		def meaning_of_life(f, I):
+		 	"""Return True if f(I) returns 42, False otherwise."""
+			# Implementation omitted
+
+		def halt(f, i) :
+		   def P(x) :
+		      f(i)
+		      if True:
+		         return 42
+		   return meaning_of_life(P, x)
+		\end{verbatim}
+		\item Then the if statement block under halt function executes iff f(i) halts.
+		\item Then halt(f, i) returns True if f(i) halts, else it will return False. 
+		\item Contradiction. Halt functions are non-computable  \# General specification of halt functionality
+	\end{description}
+	\item Then  \verb+meaning_of_life+ is non-computable 
+\end {description}
+\end {description}
+\end{enumerate}
+
+\end{document}
+
+% LocalWords:  brachial

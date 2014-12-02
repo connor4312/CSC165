@@ -58,14 +58,15 @@
 		\begin{description}
 			\item Then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow L - e < \frac{15n^2}{3\times n^2}< L + e$ \# Definition of limit
 			\item Then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow -e < \frac{15n^2}{3\times n^2}< e$ \# L = 0, by l'Hopital's rule
-			\item Then, $\exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow \frac{15n^2}{3\times n^2} < c$ \# We let e = c.
-			\item Let $M$ be such that $\forall n \in \mathbb{N}, n \geq M \Rightarrow \frac{15n^2}{3\times n^2} < c$ and choose $n = \max(M,B)$
+			\item Then, $\exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow \frac{15n^2}{3\times n^2} < c$ \# We let e = c. We can do this because both e and c may be any number in the set of all real numbers.
+			\item Let $M$ be such that $\forall k \in \mathbb{N}, k \geq M \Rightarrow \frac{15k^2}{3\times k^2} < c$ and choose $n = \max(M,B)$
 			\item Then $n \in \mathbb{N}$
 			\item Then $n \geq B$ \# By definition of maximum.
 			\item Then $15n^2 < c \times 3 \times 2^n$\#Multiplying $3\times 2^n$ over the inequality. We know this is true because $2^n$ is positive, so this will not change the inequality.
 			\item Then $n \geq B$ and $15n^2 < c\times 3\times 2^n$.
 		\end{description}
 		\item Then $\forall B \in \mathbb{N}, \forall c \in \mathbb{R}, \exists n \in \mathbb{N}, n\geq B \wedge 15n^2 < c\times 3 \times 2^n$
+		\item Conclude $15n^2 \not \in \Omega(3 \times 2^n)$
 	\end{description}
 	
 \item Proving number 4 true.
@@ -76,16 +77,19 @@
 	\end{equation*}
 	\item By the definition of the limit, then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow -e< \frac{2^{n}}{3^{n}} < e$
 	\item Then, we know that there is some $e'$ that satisfies this definition, which we will set to $1$.
-	\item Pick $B = M$, such that the definition holds. \# So $B \in \mathbb{N}$
-	\item Pick $c = e' = 1$, such that the definition holds. \# So $c \in \mathbb{R}^+$
-	\item Assume $n$ to be any natural number and $n \geq B$
+	\item Pick $B = M$
+	\item Then $B \in \mathbb{N}$ \# M is a natural number.
+	\item Pick $c = e' = 1$
+	\item Then $c \in \mathbb{R}^+$ \# 1 is a positive real number.
+	\item Assume $n \in \mathbb{N} \land n \geq B$ \# Antecedent of big-oh
 	\begin{description}
 		\item Then $-c<\frac{2^n}{3^n}<c$ \# Since we know that $n\geq B$ and by extension $n\geq M$, satisifying the limit definition.
 		\item Then $\frac{2^n}{3^n} < 1$ \# c= 1, and dismissing the negative side, since the fraction will always remain positive.
-		\item Then $2^n < 3^n$ \# since $n \geq B$, so we know that $3^n$ is positive and will not change the inequality sign.
+		\item Then $2^n < 3^n$ \# Multiply both sides by $3^n$, which must always be positive.
 		\item Then $n \geq B \Rightarrow n\geq M \Rightarrow 2^n < 3^n$ \# Assumed antecedent and got conclusion.
 	\end{description}
 	\item Then $\exists B \in \mathbb{N}, \exists c \in \mathbb{R}^+, \forall n \in \mathbb{N}, n \geq B \Rightarrow 2^n \leq 3^n$
+	\item Conclude $2^n \in \mathcal{O}(3^n)$
 \end {description}
 \item Proving number 5 is false.
 \begin{description}

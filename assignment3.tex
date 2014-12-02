@@ -74,17 +74,16 @@
 	\begin{equation*}
 		\lim_{x\to\infty}\frac{2^n}{3^n}=\lim_{x\to\infty} \left(\frac{2}{3}\right)^n = 0
 	\end{equation*}
-	\item Pick $c = 1$, $B = 0$
+	\item By the definition of the limit, then $\forall e \in \mathbb{R}^+, \exists M \in \mathbb{N}, \forall n \in \mathbb{N}, n \geq M \Rightarrow -e< \frac{2^{n}}{3^{n}} < e$
+	\item Then, we know that there is some $e'$ that satisfies this definition, which we will set to $1$.
+	\item Pick $B = M$, such that the definition holds. \# So $B \in \mathbb{N}$
+	\item Pick $c = e' = 1$, such that the definition holds. \# So $c \in \mathbb{R}^+$
 	\item Assume $n$ to be any natural number and $n \geq B$
 	\begin{description}
-		\item Then $\exists M \in \mathbb{N}, \forall n_1 \in \mathbb{N}, n_1 \geq M \Rightarrow -c< \frac{2^{n_1}}{3^{n_1}} < c$ \# We know that the limit exists, so we simply set e = c.
-		\item Choose $M = B$.
-		\item Then we know that $\forall n_1 \in \mathbb{N}, n_1 \geq B \Rightarrow \frac{2^{n_1}}{3^{n_1}} < 1$ \# Since c = 1.
-		\item Then $n_1 \in \mathbb{N}$ and $n_1 \geq M = B$
-		\item Then $n_1$ describes the same set of numbers as $n$
-		\item Then $\frac{2^{n_1}}{3^{n_1}} = \frac{2^n}{3^n} < 1$ \# Setting c = 1.
-		\item Then $2^n < 3^n$ \# since $n \geq M$, so we know that $3^n$ is positive.
-		\item Then $n \geq B \Rightarrow 2^n < 3^n$ \# Assumed antecedent and got conclusion.
+		\item Then $-c<\frac{2^n}{3^n}<c$ \# Since we know that $n\geq B$ and by extension $n\geq M$, satisifying the limit definition.
+		\item Then $\frac{2^n}{3^n} < 1$ \# c= 1, and dismissing the negative side, since the fraction will always remain positive.
+		\item Then $2^n < 3^n$ \# since $n \geq B$, so we know that $3^n$ is positive and will not change the inequality sign.
+		\item Then $n \geq B \Rightarrow n\geq M \Rightarrow 2^n < 3^n$ \# Assumed antecedent and got conclusion.
 	\end{description}
 	\item Then $\exists B \in \mathbb{N}, \exists c \in \mathbb{R}^+, \forall n \in \mathbb{N}, n \geq B \Rightarrow 2^n \leq 3^n$
 \end {description}

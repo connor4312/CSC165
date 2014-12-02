@@ -87,31 +87,58 @@
 	\end{description}
 	\item Then $\exists B \in \mathbb{N}, \exists c \in \mathbb{R}^+, \forall n \in \mathbb{N}, n \geq B \Rightarrow 2^n \leq 3^n$
 \end {description}
-\item Proving number 5 to be true.
+\item Proving number 5 is false.
 \begin{description}
-	\item Defininition of $\mathcal{O}(g):\\ \exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in n, n \geq B \implies f(n) \leq cg(n)$
-	\item Defininition of $\Omega(g):\\ \exists c \in \mathbb{R}^+, \exists B \in \mathbb{N}, \forall n \in n, n \geq B \implies f(n) \geq cg(n)$
-	\item Assume f,g $\in \mathcal{F}$
-	\item Let $c = \mathbb{R}^+$
-	\item Let B $\in \mathbb{N}$
-	\item Assume n $\in \mathbb {N}$
+	\item The negation of the statement would be: $\exists f,g \in \mathbb{F}, f\notin O(g) \wedge f \notin \Omega (g)$
+	\item Choose $g(n) = n^2$
+	\item Choose
+	\begin {displaymath}
+		f(x)= \left\{
+			\begin{array}{lr}
+				n   &: n\  even\\
+				n^3 &: n\  odd
+			\end{array}
+		\right.
+	\end {displaymath}
+	\item Now we prove $\forall B \in \mathbb{N}, \forall c \in \mathbb{R}^+, \exists N \in \mathbb{N}, N >= B \wedge f(x) > g(x)$
+	\item Let $B$ be any natural number. Then $B \in \mathbb{N}$.
+	\item Let $c$ be any positive real. Then $c \in \mathbb{R}^+$.
+	\item Case 1: B is even.
+	\begin {description}
+		\item Choose $N = \max(B+1,\left\lceil c + 1\right\rceil)$ \# Then $N \in \mathbb{N}$, since $B+1 \in \mathbb{N}$ and $\left\lceil c + 1\right\rceil \in \mathbb{N}$
+		\item Then $N \geq B$ \#By definition of max.
+		\item Then $N = \max(B+1,\left\lceil c + 1\right\rceil) \geq \left\lceil c + 1\right\rceil \geq c + 1 \geq c$
+		\item Then $N^3 = N \times N^2 \geq c\times N^2$ \# Since $N \geq c$, and $N$ is odd. 
+	\end {description}
+	\item Case 2: B is odd
+	\begin {description}
+		\item Choose $N = \max(B,\left\lceil c + 1\right\rceil)$ \# Then $N \in \mathbb{N}$, since $B \in \mathbb{N}$ and $\left\lceil c + 1\right\rceil \in \mathbb{N}$
+		\item Then $N \geq B$ \# By definition of max.
+		\item Then $N = \max(B,\left\lceil c + 1\right\rceil) \geq \left\lceil c + 1\right\rceil \geq c+1 \geq c$
+		\item Then $N^3 = N \times N^2 \geq c\times N^2$ \# Since $N \geq c$, and $N$ is odd.
+	\end {description}
+	\item Then $x^3 > cx^2$
+	\item Then $f \notin O(g)$
+	
+	\item Now, to prove that $\forall B \in \mathbb{N}, \forall c \in \mathbb{R}^+, \exists N \in \mathbb{N}, N >= B \wedge f(N) < g(N)$
+	\item Case 1: B is even.
 	\begin{description}
-		\item Case 1:
-			\begin{description}
-			\item Assume f(n) $\leq$ cg(n)
-			\item Then Case 1 satisfies definition of $\mathcal{O}(g)$
-			\end{description}
-		\item Case 2:
-			\begin{description}
-			\item Assume f(n) $\geq$ cg(n)
-			\item Then $\lnot(f(n) \leq cg(n)) = f(n) > cg(n)$ 
-			\item Then Case 2 satisfies defintition of $\Omega(g)$  \# $ f(n) > cg(n) = f(n) \geq cg(n)$
-			\end{description}
-		\item Then Case 1 and Case 2 covers all possible cases
-	\end{description}
-	\item Then $f\in\mathcal{O}(g) \vee f\in\Omega(g)$
-	\item Then $\forall f, g\in\mathcal{F}, f\in\mathcal{O}(g) \vee f\in\Omega(g)$
-\end {description}
+		\item Choose $N = \max(B,\left\lceil c - 1\right\rceil)$ \# Then $N \in \mathbb{N}$, since $B \in \mathbb{N}$ and $\left\lceil c - 1\right\rceil \in \mathbb{N}$
+		\item Then $N \geq B$ \# By definition of max.
+		\item Then $N \leq c$ \# Since $n$ can be at most $\left\lceil c - 1\right\rceil$
+		\item Then $N < N^3 = N \times N^2 < c\times N^2$ \# Since $N \leq c$, and $N$ is even.
+	\end {description}
+	\item Case 2: B is odd.
+	\begin{description}
+		\item Choose $N = \max(B+1,\left\lceil c - 1\right\rceil)$ \# Then $N \in \mathbb{N}$, since $B+1 \in \mathbb{N}$ and $\left\lceil c - 1\right\rceil \in \mathbb{N}$
+		\item Then $N \geq B$ \# By definition of max.
+		\item Then $N \leq c$ \# Since $n$ can be at most $\left\lceil c - 1\right\rceil$
+		\item Then $N < N^3 = N \times N^2 < c\times N^2$ \# Since $N \leq c$, and $N$ is even.
+	\end {description}
+	\item Then $N^3 < cN^2$
+	\item Then $f \notin \Omega(g)$
+	\item Then, $\exists f, \exists g \in \mathbb{F}, f\notin O(g) \wedge f\notin \Omega(g)$
+\end{description}
 
 \item Proving that the function \verb+meaning_of_life+ below is not computable:   %6
 Using proof by contradiction to prove non-computability. 
